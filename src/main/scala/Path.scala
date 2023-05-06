@@ -8,4 +8,5 @@ case class Path(segments: List[Segment]) {
 
 extension (paths: List[Path]) {
   def shortest: Option[Path] = if (paths.nonEmpty) Some(paths.minBy(_.distance)) else None
+  def includeStop(stop: Point): List[Path] = paths.filter(_.stops.contains(stop))
 }
