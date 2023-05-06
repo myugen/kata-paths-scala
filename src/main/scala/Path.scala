@@ -1,6 +1,6 @@
 package dev.mcabsan.paths
 
-case class Path(segments: List[Segment], stops: List[Segment] = List.empty) {
+case class Path(segments: List[Segment], stops: List[Point] = List.empty) {
   def distance: Double = segments.map(_.distance).sum
 }
 
