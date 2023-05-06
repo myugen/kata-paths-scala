@@ -38,6 +38,6 @@ class PathSpec extends AnyFlatSpec with Matchers {
 
     val paths = List(path1, path2, path3)
 
-    paths.shortest should be(path1)
+    paths.shortest should be(Some(path1))
   }
 }

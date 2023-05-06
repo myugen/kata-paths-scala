@@ -7,5 +7,5 @@ case class Path(segments: List[Segment]) {
 }
 
 extension (paths: List[Path]) {
-  def shortest: Path = paths.minBy(_.distance)
+  def shortest: Option[Path] = if (paths.nonEmpty) Some(paths.minBy(_.distance)) else None
 }
