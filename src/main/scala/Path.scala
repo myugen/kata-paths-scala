@@ -7,5 +7,5 @@ case class Path(segments: List[Segment]) {
 }
 
 extension (paths: List[Path]) {
-  def shortestPath: Path = paths.minBy(_.distance)
+  def shortest: Path = paths.minBy(_.distance)
 }
