@@ -1,9 +1,9 @@
 package dev.mcabsan.paths
 
-case class Path(segments: List[Segment], stops: List[Segment]) {
-  def distance: Double = throw NotImplementedError("TODO: implement distance")
+case class Path(segments: List[Segment], stops: List[Segment] = List.empty) {
+  def distance: Double = segments.map(_.distance).sum
 }
 
 extension (paths: List[Path]) {
-  def shortestPath: Path = throw NotImplementedError("TODO: implement shortestPath")
+  def shortestPath: Path = paths.minBy(_.distance)
 }
